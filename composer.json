@@ -3,7 +3,7 @@
     "description": "OpenAI GPT-3 Api Client in PHP",
     "license": "LGPL-3.0-or-later",
     "type": "contao-bundle",
-    "version": "1.0.0-beta",
+    "version": "1.0.1-beta",
     "authors": [
         {
             "name": "Ben Mosong",
