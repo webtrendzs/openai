@@ -1,5 +1,5 @@
 {
-    "name": "cloudsasa/openai",
+    "name": "webtrendzs/openai",
     "description": "OpenAI GPT-3 Api Client in PHP",
     "type": "library",
     "license": "LGPL-3.0-or-later",
@@ -8,13 +8,13 @@
     "authors": [
         {
             "name": "Ben Mosong",
-            "homepage": "https://github.com/cloudsasa"
+            "homepage": "https://github.com/webtrendzs"
         }
     ],
     "homepage": "https://cloudsasa.com",
     "support": {
-        "issues": "https://github.com/cloudsasa/openai/issues",
-        "source": "https://github.com/cloudsasa/openai"
+        "issues": "https://github.com/webtrendzs/openai/issues",
+        "source": "https://github.com/webtrendzs/openai"
     },
     "require": {
         "php": "^7.4 || ^8.0",
