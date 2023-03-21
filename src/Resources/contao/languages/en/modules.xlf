@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+  <file datatype="php" original="src/Resources/contao/languages/en/modules.php" source-language="en">
+    <body>
+      <trans-unit id="FMD.openai">
+        <source>Open AI</source>
+      </trans-unit>
+      <trans-unit id="FMD.chatGPT.0">
+        <source>OpenAI GPT-3 Client</source>
+      </trans-unit>
+      <trans-unit id="FMD.chatGPT.1">
+        <source>Provide interface for interracting with chatGPT-3 API</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

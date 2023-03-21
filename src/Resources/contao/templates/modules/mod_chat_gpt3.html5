@@ -1,0 +1,106 @@
+<?php $this->block('content'); ?>
+
+<!-- indexer::stop -->
+<div class="<?= $this->class ?> block" <?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"
+    <?php endif; ?>>
+
+    <form id="ai_assistant" method='POST'>
+        <input type="hidden" name="REQUEST_TOKEN" value="<?= $this->requestToken ?>">
+        <input type="hidden" name="FORM_SUBMIT" value="chat">
+        <input type="hidden" name="message_id" value="">
+        <input type="hidden" name="instruction" value="">
+        <div class="card__container">
+            <ul>
+                <li>
+                    <h1>I am your AI assistant for the day.</h1>
+                    <div>I would love to hear your thoughts, suggestions, concerns or problems with
+                        anything so we can improve!</div>
+                </li>
+                <li>
+                    <div>
+                        <h3>Choose your assistant</h3>
+                    </div>
+                    <div>
+                        <div><label for="input_3_0">
+                                <input type="radio" id="input_3_0" required name="assistant"
+                                    value="Hiring Manager" />Hiring
+                                Manager<br>
+                                <quote>As your hiring manager, I can give you suggestions on how to build
+                                    their
+                                    cv and write cover letters.</quote>
+                            </label>
+                        </div>
+                        <div><label for="input_3_1">
+                                <input type="radio" id="input_3_1" required name="assistant" value="Product
+                                                Manager" />Product
+                                Manager<br>
+                                <quote>As your product manager, I am good at generating product descriptions
+                                    for e-commerce websites. We will work on this together until we have a
+                                    perfect description. </quote>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <div class="response">
+                            <div id="response-box-overlay">
+                            </div>
+                            <div id=reply>
+                            </div>
+                            <div id="loading" class="invisible">
+                                <div class="wave"></div>
+                                <div class="wave"></div>
+                                <div class="wave"></div>
+                                <div class="wave"></div>
+                                <div class="wave"></div>
+                                <div class="wave"></div>
+                                <div class="wave"></div>
+                                <div class="wave"></div>
+                                <div class="wave"></div>
+                                <div class="wave"></div>
+                            </div>
+                            <div id="input">
+                                <div><textarea id="query" placeholder="How can I help?" name="query" required
+                                        aria-labelledby="query"></textarea>
+                                </div>
+                                <div>
+                                    <div id="messages">
+                                        <span class="empty error invisible">Please choose your assistant and tell me
+                                            how I can help.</span>
+                                        <span class="assistant error invisible">Please choose your assistant.</span>
+                                        <span class="query error invisible">How should I help you?</span>
+                                        <span class="improve error invisible">How should I improve this answer?</span>
+                                        <span class="summarize error invisible">How should I summarize? Are there words,
+                                            statements I should remove?</span>
+                                    </div>
+
+                                    <div id="actions">
+                                        <button class="instructor active" id="ask" type="submit">Let's Go</button>
+                                        <button class="instructor invisible" type="button" id="improve">Improve this
+                                            answer</button>
+                                        <button class="instructor invisible" type="button" id="summarize">Too long.
+                                            Summarize</button>
+                                        <button class="instructor invisible" disabled type="button" id="save">Save this
+                                            answer</button>
+                                        <div>&nbsp;</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p>powered by gpt-3.5-turbo</p>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </form>
+
+</div>
+<!-- indexer::continue -->
+
+<?php $this->endblock(); ?>
