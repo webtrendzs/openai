@@ -36,9 +36,7 @@ class Completion {
         
         $status_code = $response->getStatusCode();
 
-        $objSession = System::getContainer()->get('session');
-
-		$sessionBag = $objSession->getBag('contao_frontend');
+        $objSession = System::getContainer()->get('contao.session.contao_frontend');
 
         $chat = !empty($instructions['chat']) ? $instructions['chat'] : [];
         
@@ -46,7 +44,7 @@ class Completion {
             $this->content = json_decode($response->getContent());
             $choices = $this->content->choices[0];
             // dump($chat);
-            $sessionBag->set('chat', array_merge(
+            $objSession->set('chat', array_merge(
                 $chat, 
                 [time().'=>'.$choices->message->role."=>".$this->content->id => $choices->message->content]
             ));
