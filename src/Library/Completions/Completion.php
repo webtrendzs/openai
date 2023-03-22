@@ -5,7 +5,7 @@ namespace OpenAI\GPT3\Library\Completions;
 use Symfony\Component\HttpClient\HttpClient;
 use OpenAI\GPT3\Library\Api;
 use Contao\Config;
-use Contao\Session;
+use Contao\System;
 
 
 class Completion {
@@ -36,7 +36,9 @@ class Completion {
         
         $status_code = $response->getStatusCode();
 
-        $objSession = Session::getInstance();
+        $objSession = System::getContainer()->get('session');
+
+		$sessionBag = $objSession->getBag('contao_frontend');
 
         $chat = !empty($instructions['chat']) ? $instructions['chat'] : [];
         
@@ -44,7 +46,7 @@ class Completion {
             $this->content = json_decode($response->getContent());
             $choices = $this->content->choices[0];
             // dump($chat);
-            $objSession->set('chat', array_merge(
+            $sessionBag->set('chat', array_merge(
                 $chat, 
                 [time().'=>'.$choices->message->role."=>".$this->content->id => $choices->message->content]
             ));

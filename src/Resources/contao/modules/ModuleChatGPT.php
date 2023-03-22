@@ -68,6 +68,10 @@ class ModuleChatGPT extends Module
 		$this->import(FrontendUser::class, 'User');
 
 		$this->generateAssets();
+
+		$objSession = System::getContainer()->get('session');
+
+		$sessionBag = $objSession->getBag('contao_frontend');
 		
 		$this->Template->requestToken = System::getContainer()->get('contao.csrf.token_manager')->getDefaultTokenValue();
 
@@ -78,7 +82,7 @@ class ModuleChatGPT extends Module
 				"action" => Input::post('instruction'),
 				"assistant" => Input::post('assistant'),
 				"query" => Input::post('query'),
-				"chat" => Session::getInstance()->get('chat')
+				"chat" => $sessionBag->get('chat')
 			];
 
 			$objInstructor = new Instructor($instructions['assistant']);
@@ -92,10 +96,10 @@ class ModuleChatGPT extends Module
 				function($abort = false) use ($objCompletion) {
 
 					if($abort) {
-						echo $objCompletion->answer(Session::getInstance()->get('chat'));
+						echo $objCompletion->answer($sessionBag->get('chat'));
 						exit;
 					} else {
-						echo $objCompletion->answer(Session::getInstance()->get('chat'));
+						echo $objCompletion->answer($sessionBag->get('chat'));
 						exit;
 					}
 				

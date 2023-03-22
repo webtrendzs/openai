@@ -3,7 +3,6 @@
 namespace OpenAI\GPT3\Library;
 
 use OpenAI\GPT3\Library\Api;
-use Contao\Session;
 
 
 class Instructor {
@@ -82,8 +81,6 @@ class Instructor {
                 }
                 
         }
-
-        Session::getInstance()->set("instructions", $this->instructions);
 
         return [
             "model" => $this->model,
