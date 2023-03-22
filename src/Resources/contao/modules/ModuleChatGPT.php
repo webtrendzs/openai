@@ -68,20 +68,6 @@ class ModuleChatGPT extends Module
 		$this->import(FrontendUser::class, 'User');
 
 		$this->generateAssets();
-
-		// dump((Session::getInstance()->get('chat')));
-		//dump((Session::getInstance()->get('instructions')));
-		/* $instructions = [
-				"message_id" => "chatcmpl-6wPqLtLCrIzvinVLHh620Koo6C7Ab",
-				"action" => 'ask',
-				"assistant" => "Product Manager",
-				"query" => 'Can you paraphrase an example of how exactly I would go about point number 2?',
-				"chat" => Session::getInstance()->get('chat')
-			];
-			
-		$objInstructor = new Instructor($instructions['assistant']);
-
-		dump($objInstructor->instruct($instructions)); */
 		
 		$this->Template->requestToken = System::getContainer()->get('contao.csrf.token_manager')->getDefaultTokenValue();
 

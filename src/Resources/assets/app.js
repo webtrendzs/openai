@@ -128,7 +128,6 @@ $(function () {
           .callFunction(() => {
             $("#actions > button").each((i, el) => {
               $(el).removeClass("invisible").fadeIn(1000);
-              $("#ask").text("Ask something else");
             });
           })
           .pauseFor(1000)
