@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.1">
-  <file datatype="php" original="src/Resources/contao/languages/en/tl_chatgpt_services.php" source-language="en">
+  <file datatype="php" original="src/Resources/contao/languages/de/tl_chatgpt_services.php" source-language="de">
     <body>
       <trans-unit id="tl_chatgpt_services.title_legend">
         <source>Name, Kategorie und Beschreibung</source>
