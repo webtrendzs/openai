@@ -1,9 +1,9 @@
 {
     "name": "webtrendzs/openai",
-    "description": "OpenAI GPT-3 Api Client in PHP",
+    "description": "OpenAI chatGPT Api Client",
     "license": "LGPL-3.0-or-later",
     "type": "contao-bundle",
-    "version": "1.0.3-beta",
+    "version": "1.0.4-beta",
     "authors": [
         {
             "name": "Ben Mosong",
@@ -33,7 +33,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OpenAI\\GPT3\\": "src/"
+            "OpenAI\\ChatGPT\\": "src/"
         },
         "classmap": [
             "src/Resources/contao/"
@@ -47,7 +47,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "OpenAI\\GPT3\\Tests\\": "tests/"
+            "OpenAI\\ChatGPT\\Tests\\": "tests/"
         }
     },
     "config": {
@@ -62,7 +62,7 @@
             "bin-links": false,
             "target-directory": "tools"
         },
-        "contao-manager-plugin": "OpenAI\\GPT3\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "OpenAI\\ChatGPT\\ContaoManager\\Plugin"
     },
     "scripts": {
         "all": [

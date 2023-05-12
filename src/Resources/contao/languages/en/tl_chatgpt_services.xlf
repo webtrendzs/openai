@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+  <file datatype="php" original="src/Resources/contao/languages/en/tl_chatgpt_services.php" source-language="en">
+    <body>
+      <trans-unit id="tl_chatgpt_services.title_legend">
+        <source>Name, Category and Description</source>
+      </trans-unit>
+      <trans-unit id="tl_chatgpt_services.config_legend">
+        <source>Product configuration</source>
+      </trans-unit>
+      <trans-unit id="tl_chatgpt_services.serviceName.0">
+        <source>Product/Service name.</source>
+      </trans-unit>
+      <trans-unit id="tl_chatgpt_services.serviceName.1">
+        <source>Give a descriptive name of this product/service.</source>
+      </trans-unit>
+      <trans-unit id="tl_chatgpt_services.category.0">
+        <source>Product/Service Category.</source>
+      </trans-unit>
+      <trans-unit id="tl_chatgpt_services.category.1">
+        <source>How is this product categorized in the market? Is it under Education, Healthcare, Social Media, Sales etc.</source>
+      </trans-unit>
+      <trans-unit id="tl_chatgpt_services.description.0">
+        <source>Product/Service description.</source>
+      </trans-unit>
+      <trans-unit id="tl_chatgpt_services.description.1">
+        <source>Describe this product succintly to your users. Note: This description is very importat since it will be used in the frontend to sell the product to the users.</source>
+      </trans-unit>
+      <trans-unit id="tl_chatgpt_services.introduction.0">
+        <source>ChatGPT introduction.</source>
+      </trans-unit>
+      <trans-unit id="tl_chatgpt_services.introduction.1">
+        <source>Introduce this product to the ChatGPT API so that it can provide the correct answers. Make this brief so that you don't exaust your token allocation.</source>
+      </trans-unit>
+      <trans-unit id="tl_chatgpt_services.groups.0">
+        <source>User group.</source>
+      </trans-unit>
+      <trans-unit id="tl_chatgpt_services.groups.1">
+        <source>Assign users to this product through a member group.</source>
+      </trans-unit>
+      <trans-unit id="tl_chatgpt_services.published.0">
+        <source>Publish service</source>
+      </trans-unit>
+      <trans-unit id="tl_chatgpt_services.published.1">
+        <source>Make the service publicly visible on the website.</source>
+      </trans-unit>
+      <trans-unit id="tl_chatgpt_services.start.0">
+        <source>Show from</source>
+      </trans-unit>
+      <trans-unit id="tl_chatgpt_services.start.1">
+        <source>If you want to prevent the service from showing on the website before a certain date/time, you can enter it here. Otherwise, leave the field blank.</source>
+      </trans-unit>
+      <trans-unit id="tl_chatgpt_services.stop.0">
+        <source>Show until</source>
+      </trans-unit>
+      <trans-unit id="tl_chatgpt_services.stop.1">
+        <source>If you want to prevent the service from showing on the website after a certain date/time, you can enter it here. Otherwise, leave the field blank.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -8,7 +8,12 @@
  * @license LGPL-3.0-or-later
  */
 
-use OpenAI\GPT3\ModuleChatGPT;
+use OpenAI\ChatGPT\ModuleChatGPT;
+
+// Backend modules
+$GLOBALS['BE_MOD']['content']['chatGPTServices'] = array(
+    'tables' => array('tl_chatgpt_services', 'tl_chatgpt_subscribers')
+);
 
 // Front end modules
 $GLOBALS['FE_MOD']['openai'] = array(

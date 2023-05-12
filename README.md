@@ -1,10 +1,8 @@
-# Contao 4 Escorts bundle
+# OpenAI GPT Api Client bundle for Contao
 
 Contao is an Open Source PHP Content Management System for people who want a
-professional website that is easy to maintain. Visit the [project website][1]
+professional website that is easy to maintain. Visit the (https://contao.org/)[Contao.org]
 for more information.
-
-You can use this escorts bundle to your contao installation if you want to start an escorts service.
 
 ## Install
 

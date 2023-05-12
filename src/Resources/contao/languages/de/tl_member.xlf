@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+  <file datatype="php" original="src/Resources/contao/languages/en/tl_member.php" source-language="en">
+    <body>
+      <trans-unit id="tl_module.chatGPTServices.0">
+        <source>ChatGPT Product/Services</source>
+      </trans-unit>
+      <trans-unit id="tl_module.chatGPTServices.1">
+        <source>Wählen Sie das Produkt aus, das dieser Benutzer verwenden darf.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

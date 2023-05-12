@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+  <file datatype="php" original="src/Resources/contao/languages/en/default.php" source-language="en">
+    <body>
+      <trans-unit id="MSC.letsGo">
+        <source>Let's Go</source>
+      </trans-unit>
+      <trans-unit id="MSC.howToHelp">
+        <source>How can I help you?</source>
+      </trans-unit>
+      <trans-unit id="MSC.noInstructions">
+        <source>Please choose your assistant and tell me how I can help.</source>
+      </trans-unit>
+      <trans-unit id="MSC.noAssistant">
+        <source>Please choose your assistant.</source>
+      </trans-unit>
+      <trans-unit id="MSC.noQuery">
+        <source>How should I help you?</source>
+      </trans-unit>
+      <trans-unit id="MSC.saveAnswer">
+        <source>Save this answer</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -10,9 +10,9 @@ declare(strict_types=1);
  * @license LGPL-3.0-or-later
  */
 
-namespace OpenAI\GPT3\Tests;
+namespace OpenAI\ChatGPT\Tests;
 
-use OpenAI\GPT3\CloudsasaOpenAIBundle;
+use OpenAI\ChatGPT\CloudsasaOpenAIBundle;
 use PHPUnit\Framework\TestCase;
 
 class CloudsasaOpenAIBundleTest extends TestCase
@@ -21,6 +21,6 @@ class CloudsasaOpenAIBundleTest extends TestCase
     {
         $bundle = new CloudsasaOpenAIBundle();
 
-        $this->assertInstanceOf('OpenAI\GPT3\CloudsasaOpenAIBundle', $bundle);
+        $this->assertInstanceOf('OpenAI\ChatGPT\CloudsasaOpenAIBundle', $bundle);
     }
 }

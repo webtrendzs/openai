@@ -12,6 +12,7 @@ body {
 .card__container ul {
     display: flex;
     flex-direction: column;
+    padding:0;
     width: 80%;
 }
 

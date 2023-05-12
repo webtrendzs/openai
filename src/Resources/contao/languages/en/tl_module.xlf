@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+  <file datatype="php" original="src/Resources/contao/languages/en/tl_module.php" source-language="en">
+    <body>
+      <trans-unit id="tl_module.chatGPTModel.0">
+        <source>ChatGPT Model</source>
+      </trans-unit>
+      <trans-unit id="tl_module.chatGPTModel.1">
+        <source>Please select the model you want the client to use.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

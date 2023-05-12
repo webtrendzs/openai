@@ -3,10 +3,10 @@
   <file datatype="php" original="src/Resources/contao/languages/en/modules.php" source-language="en">
     <body>
       <trans-unit id="MOD.chatGPTServices.0">
-        <source>ChatGPT Services</source>
+        <source>ChatGPT Service</source>
       </trans-unit>
       <trans-unit id="MOD.chatGPTServices.1">
-        <source>Set up ChatGPT Services for your subscribers</source>
+        <source>Richten Sie ChatGPT-Dienste für Ihre Abonnenten ein.</source>
       </trans-unit>
       <trans-unit id="FMD.openai">
         <source>Open AI</source>
@@ -15,7 +15,7 @@
         <source>OpenAI chatGPT Client</source>
       </trans-unit>
       <trans-unit id="FMD.chatGPT.1">
-        <source>Provide interface for interracting with chatGPT API</source>
+        <source>Stellen Sie eine Schnittstelle zur Interaktion mit der ChatGPT-API bereit.</source>
       </trans-unit>
     </body>
   </file>
