@@ -48,9 +48,21 @@ $(function () {
     });
   };
 
-  $(document).on("click", "#ask, #improve, #summarize, #save", (e) => {
-    e.preventDefault();
+  const reset = (callback) => {
+    $.ajax({
+      method: "GET",
+      url: location.href,
+      processData: false,
+      contentType: "application/json",
+      cache: false,
+      data: { reset: true },
+      enctype: "multipart/form-data",
+      success: callback,
+      error: console.error,
+    });
+  };
 
+  $(document).on("click", "#ask, #reset, #improve, #summarize, #save", (e) => {
     const form = document.getElementById("ai_assistant");
 
     currentInst = $(e.target).attr("id");
@@ -58,6 +70,16 @@ $(function () {
 
     form.message_id.value = currentMid ? currentMid : "";
     form.instruction.value = currentInst;
+
+    if (currentInst == "reset") {
+      reset(() => {
+        $("#reply").children("div").remove().fadeIn(300);
+      });
+
+      return;
+    }
+
+    e.preventDefault();
 
     if (currentInst == "improve") {
       $("#actions > button.active").each((i, el) => {

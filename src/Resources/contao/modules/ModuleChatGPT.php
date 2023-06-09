@@ -66,11 +66,10 @@ class ModuleChatGPT extends Module
 
 		$this->generateAssets();
 
-		$this->loadLanguageFile('default');
-
 		$objSession = System::getContainer()->get('contao.session.contao_frontend');
 
-		$objSession->set('products', $this->getUserProducts());
+		if (is_null($objSession->get('products')))
+			$objSession->set('products', $this->getUserProducts());
 
 		$this->Template->requestToken = System::getContainer()->get('contao.csrf.token_manager')->getDefaultTokenValue();
 
@@ -81,6 +80,13 @@ class ModuleChatGPT extends Module
 		$this->Template->noAssistant = $GLOBALS['TL_LANG']['MSC']['noAssistant'];
 		$this->Template->noQuery = $GLOBALS['TL_LANG']['MSC']['noQuery'];
 		$this->Template->letsGo = $GLOBALS['TL_LANG']['MSC']['letsGo'];
+		$this->Template->reset = $GLOBALS['TL_LANG']['MSC']['reset'];
+
+		if (!is_null(Input::get('_'))) {
+			unset($_SESSION['chat']);
+			echo json_encode(["reset" => true]);
+			exit;
+		}
 
 		if (Input::post('FORM_SUBMIT') == 'chat') {
 
@@ -90,7 +96,7 @@ class ModuleChatGPT extends Module
 				"assistant" => $objSession->get('products')[Input::post('assistant')]['introduction'],
 				"query" => Input::post('query'),
 				"model" => $this->chatGPTModel,
-				"chat" => $objSession->get('chat')
+				"chat" => $_SESSION['chat']
 			];
 
 			$objInstructor = new Instructor($instructions['assistant']);
@@ -101,12 +107,13 @@ class ModuleChatGPT extends Module
 				$objInstructor->instruct(
 					$instructions
 				),
-				function ($abort = null) use ($objCompletion, $objSession) {
-					if ($abort) {
-						echo $objCompletion->answer($objSession->get('chat'));
+				function ($error = null) use ($objCompletion) {
+					if ($error) {
+						dump($error);
+						echo $objCompletion->answer($_SESSION['chat']);
 						exit;
 					} else {
-						echo $objCompletion->answer($objSession->get('chat'));
+						echo $objCompletion->answer($_SESSION['chat']);
 						exit;
 					}
 				}
@@ -116,8 +123,6 @@ class ModuleChatGPT extends Module
 
 	private function generateAssets()
 	{
-
-		$container = System::getContainer();
 
 		$strTypedPath = 'assets/openai/js/typed.min.js';
 		$strAppPath = 'assets/openai/js/app.min.js';

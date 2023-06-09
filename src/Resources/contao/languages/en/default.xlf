@@ -5,6 +5,9 @@
       <trans-unit id="MSC.letsGo">
         <source>Let's Go</source>
       </trans-unit>
+      <trans-unit id="MSC.reset">
+        <source>Restart</source>
+      </trans-unit>
       <trans-unit id="MSC.howToHelp">
         <source>How can I help you?</source>
       </trans-unit>

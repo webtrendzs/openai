@@ -3,7 +3,10 @@
   <file datatype="php" original="src/Resources/contao/languages/de/default.php" source-language="de">
     <body>
       <trans-unit id="MSC.letsGo">
-        <source>"Los geht's</source>
+        <source>Los geht's</source>
+      </trans-unit>
+      <trans-unit id="MSC.reset">
+        <source>Neustart</source>
       </trans-unit>
       <trans-unit id="MSC.howToHelp">
         <source>Wie kann ich Ihnen helfen?</source>

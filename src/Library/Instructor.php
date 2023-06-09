@@ -74,12 +74,15 @@ class Instructor
         switch ($arrinstructions['action']) {
             case "improve":
                 $this->improveAnswer($arrinstructions);
+                break;
             case "summarize":
                 $this->summarizeText($arrinstructions);
+                break;
             default:
-                if (!empty($arrinstructions['chat'])) {
+                if (!is_null($arrinstructions['chat'])) {
                     $this->converse($arrinstructions);
                 } else {
+                    $this->beginChat();
                     $this->updateInstructions([
                         ["role" => "user", "content" => $arrinstructions['query']]
                     ]);
@@ -88,7 +91,8 @@ class Instructor
 
         return [
             "model" => $this->model,
-            "messages" => $this->instructions
+            "messages" => $this->instructions,
+            "temperature" => 0,
         ];
     }
 
@@ -98,32 +102,25 @@ class Instructor
         $this->instructions = array_merge($this->instructions, $newInstructions);
     }
 
-    protected function getMessageById($message_id, $messages)
-    {
-        $text = "";
-        foreach ($messages as $key => $message) {
-            list($time, $role, $id) = explode("=>", $key);
-            if ($id == $message_id) {
-                $text = $message;
-                break;
-            }
-        }
-
-        return $text;
-    }
-
     protected function prepareMessage($arrinstructions)
     {
 
         $currentMessages = $arrinstructions['chat'];
 
-        $message = $this->getMessageById($arrinstructions['message_id'], $currentMessages);
+        $chats = [];
+        foreach ($currentMessages as $key => $message) {
+            if (preg_match('/assistant/', $key)) {
+                $chats[] = ["role" => "assistant", "content" => $message];
+            } else {
+                $chats[] = ["role" => "user", "content" => $message];
+            }
+        }
 
-        $this->beginChat();
 
-        $this->updateInstructions([
-            ["role" => "assistant", "content" => $message]
-        ]);
+        if (empty($this->instructions))
+            $this->beginChat();
+
+        $this->updateInstructions($chats);
     }
 
     protected function beginChat()

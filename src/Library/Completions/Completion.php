@@ -37,22 +37,17 @@ class Completion
 
         $status_code = $response->getStatusCode();
 
-        $objSession = System::getContainer()->get('contao.session.contao_frontend');
-
-        $chat = !empty($instructions['chat']) ? $instructions['chat'] : [];
+        $query = array_pop($instructions['messages']);
 
         if ($status_code == 200) {
             $this->content = json_decode($response->getContent());
             $choices = $this->content->choices[0];
-            // dump($chat);
-            $objSession->set('chat', array_merge(
-                $chat,
-                [time() . '=>' . $choices->message->role . "=>" . $this->content->id => $choices->message->content]
-            ));
+            $_SESSION['chat'][time() . '=>user=>' . $this->content->id] = $query['content'];
+            $_SESSION['chat'][time() . '=>' . $choices->message->role . "=>" . $this->content->id] = $choices->message->content;
 
             $callback();
         } else {
-            $callback();
+            $callback($response);
         }
     }
 
